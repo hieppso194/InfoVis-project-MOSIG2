@@ -34,22 +34,24 @@ for i in range(11):
     for k in range(len(dst2[i])):
         dst[i].append(dst2[i][k])
     for m in range(len(dst3[i])):
-        dst[i].append(dst3[i])
-print(dst[1])
+        dst[i].append(dst3[i][m])
+# print(len(dst[1]), len(dst1[1]+dst2[1]+dst3[1]))
+# print (type(dst1[1][1]))
 
-# fig_dst0 = ff.create_distplot(dst,candidates,bin_size=.05,show_hist=False)
+
+fig_dst0 = ff.create_distplot(dst,candidates,bin_size=.05,show_hist=False)
 fig_dst1 = ff.create_distplot(dst1,candidates,bin_size=.05,show_hist=False)
 fig_dst2 = ff.create_distplot(dst2,candidates,bin_size=.05,show_hist=False)
 fig_dst3 = ff.create_distplot(dst3,candidates,bin_size=.05,show_hist=False)
 
-# fig_dst0['layout'].update(title='All VTs')
+fig_dst0['layout'].update(title='Score distribution in the evaluative voting in all VTs')
 fig_dst1['layout'].update(title='Score distribution in the evaluative voting in VT1')
 fig_dst2['layout'].update(title='Score distribution in the evaluative voting in VT2')
 fig_dst3['layout'].update(title='Score distribution in the evaluative voting in VT3')
 
-# plotly.offline.plot(fig_dst0, filename='Score_distributionAllVTs.html')
-plotly.offline.plot(fig_dst1, filename='html/Score_distributionVT1.html')
-plotly.offline.plot(fig_dst2, filename='html/Score_distributionVT2.html')
-plotly.offline.plot(fig_dst3, filename='html/Score_distributionVT3.html')
+plotly.offline.plot(fig_dst0, filename='html/Score_distributionAllVTs.html')
+# plotly.offline.plot(fig_dst1, filename='html/Score_distributionVT1.html')
+# plotly.offline.plot(fig_dst2, filename='html/Score_distributionVT2.html')
+# plotly.offline.plot(fig_dst3, filename='html/Score_distributionVT3.html')
 
 
